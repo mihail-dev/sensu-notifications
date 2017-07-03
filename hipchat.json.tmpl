@@ -1,0 +1,19 @@
+{
+  "handlers": {
+    "hipchat": {
+      "command": "/etc/sensu/handlers/hipchat.rb -r {{ default "default" .HIPCHAT_ROOM_NAME }}",
+      "type": "pipe",
+      "severities": [
+        "ok",
+        "critical",
+        "unknown"
+      ]
+    }
+  },
+  "hipchat": {
+     "apikey": {{ default "default" .HIPCHAT_ROOM_API_KEY | quote }},
+     "server_url": {{ default "default" .HIPCHAT_SERVER_URL | quote }},
+     "room": {{ default "default" .HIPCHAT_ROOM_NUMBER | quote }},
+     "from": "Sensu Master"
+  }
+}
