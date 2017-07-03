@@ -1,7 +1,7 @@
 {
   "handlers": {
     "hipchat": {
-      "command": "/etc/sensu/handlers/hipchat.rb -r {{ default "default" .HIPCHAT_ROOM_NAME }}",
+      "command": "/etc/sensu/handlers/hipchat.rb -r {{ default \\"default\\" .HIPCHAT_ROOM_NAME }}",
       "type": "pipe",
       "severities": [
         "ok",
